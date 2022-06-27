@@ -5,6 +5,13 @@ ruby '3.1.2'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
 
+gem 'bootstrap', '~> 4.0'
+gem 'bootstrap_form', '~> 4.0'
+gem 'devise'
+# gem 'devise-i18n'
+# gem 'devise_invitable'
+gem 'devise-bootstrap-form'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.3'
 
