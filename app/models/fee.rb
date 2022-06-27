@@ -3,6 +3,7 @@ class Fee < ApplicationRecord
   has_many :group_fees, foreign_key: 'fee_id', class_name: 'GroupFee', dependent: :destroy
 
   validates :name, presence: true
+  validates :name, length: { maximum: 50 }
   validates :amount, presence: true
   validates :amount, numericality: { greater_than_or_equal_to: 0 }
 end

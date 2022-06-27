@@ -5,8 +5,5 @@ class Group < ApplicationRecord
   validates :name, presence: true
   validates :name, uniqueness: true
   validates :name, length: { maximum: 50 }
-  validates :name, format: { with: /\A[a-zA-Z0-9_]+\z/ }
   validates :icon, presence: true
-  validates :total_amount, presence: true
-  validates :total_amount, numericality: { greater_than_or_equal_to: 0 }
 end
