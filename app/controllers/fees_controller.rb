@@ -14,6 +14,8 @@ class FeesController < ApplicationController
     end
   end
 
+  private
+
   def fee_params
     params.require(:fee).permit(:name, :amount, :user_id)
   end

@@ -7,7 +7,13 @@ class Group < ApplicationRecord
   validates :icon, presence: true
 
   def total_amount
-    fees = group_fees.map(&:fee_id)
-    fees.inject(0) { |sum, fee| sum + Fee.find(fee).amount }
+    # fees = group_fees.includes([:fee]).map(&:fee_id)
+    # fees.inject(0) { |sum, fee| sum + Fee.find(fee).amount }
+    fees = group_fees.includes([:fee])
+    total = 0
+    fees.each do |fee|
+      total += fee.fee.amount
+    end
+    total
   end
 end
