@@ -1,6 +1,7 @@
 class FeesController < ApplicationController
   def new
     @group = Group.find(params[:group_id])
+    @title = 'New Transaction'
   end
 
   def create

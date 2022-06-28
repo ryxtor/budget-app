@@ -2,6 +2,7 @@ class GroupsController < ApplicationController
   # GET /groups or /groups.json
   def index
     @groups = current_user.groups
+    @title = 'Categories'
   end
 
   # GET /groups/1 or /groups/1.json
@@ -9,13 +10,13 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
     @fees = @group.group_fees.map(&:fee_id)
     @fees = Fee.where(id: @fees).sort_by(&:created_at).reverse
-
     @total = @fees.inject(0) { |sum, fee| sum + fee.amount }
+    @title = @group.name
   end
 
   # GET /groups/new
   def new
-    @group = Group.new
+    @title = 'New Category'
   end
 
   # GET /groups/1/edit
