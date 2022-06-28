@@ -1,0 +1,18 @@
+<h2 class="text-center">Categories</h2>
+
+<div class="container bg-light pt-3 pb-3">
+<% @groups.each do |group|%>
+<div onclick="window.location='/groups/<%=group.id%>'" class="container bg-white border mb-3 row pb-2 pt-2 ms-0">
+<i class="fa <%= group.icon %> fa-4x col p-0" aria-hidden="true"></i>
+  
+<div class="col">
+  <p class="text"><%= group.name %></p>
+  <p class="font-weight-bold">$<%= group.total_amount || 0 %></p>
+  </div>
+  </div>
+<% end %>
+</div>
+
+<div class="fixed-bottom">
+<%= button_to 'Add Category', new_group_path, class: 'btn btn-primary', method: :get %>
+</div>
