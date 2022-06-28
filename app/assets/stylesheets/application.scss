@@ -1,2 +1,35 @@
 @import "bootstrap";
 @import "rails_bootstrap_forms";
+@import "font-awesome";
+
+$primary-color: #3778c2;
+$secondary-color: #5fb523;
+$text-color: #434b54;
+
+.navbar{
+  background-color: $primary-color !important;
+  color: $text-color;
+}
+
+.text {
+  color: $text-color;
+}
+
+.alert {
+  margin: 0.5rem 1rem;
+  border-radius: 5px;
+  padding: 0.5rem;
+  color: white !important;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+}
+
+.success {
+  background-color: #28a745 !important;
+}
+
+.error {
+  background-color: #d92550 !important;
+}
