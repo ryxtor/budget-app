@@ -1,0 +1,24 @@
+<p class="font-weight-bold text-center">Total Spent: $<%= @total || 0 %></p>
+
+<div class="container">
+  <% @fees.each do |fee| %>
+  <div class="container">
+    <div class="row border bg-white mb-3">
+      <div class="col">
+        <p class="font-weight-bold">
+          <%= fee.name %>
+        </p>
+      </div>
+      <div class="col">
+        <p class="font-weight-bold">
+          $<%= fee.amount %>
+        </p>
+      </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="fixed-bottom">
+<%= button_to 'Add Transaction', new_group_fee_path(params[:id]), class: 'btn btn-primary', method: :get %>
+</div>
