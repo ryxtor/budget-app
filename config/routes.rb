@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   end
   
   resources :users
-  resources :groups, only: [:new, :create, :show, :edit, :update, :destroy]
+  resources :groups, only: [:new, :create, :show, :edit, :update, :destroy] do
+    resources :fees, only: [:new, :create, :edit, :update, :destroy]
+  end
   root 'groups#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
