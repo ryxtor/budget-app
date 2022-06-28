@@ -7,6 +7,7 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 
 gem 'bootstrap', '~> 4.0'
 gem 'bootstrap_form', '~> 4.0'
+gem 'bullet', group: 'development'
 gem 'cancancan'
 gem 'devise'
 # gem 'devise-i18n'
