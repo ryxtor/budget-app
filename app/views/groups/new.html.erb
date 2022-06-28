@@ -1,0 +1,6 @@
+<%= form_with url: "/groups", scope: :group do |f| %>
+  <%= f.text_field :name, placeholder: 'Category Name', class: "form-control" %>
+  <%= f.text_field :icon, placeholder: 'Icon Name', class: "form-control" %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.submit 'Create Category', class: "btn btn-primary" %>
+<% end %>
