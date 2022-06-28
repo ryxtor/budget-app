@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   end
   
   resources :users
-  root 'users#index'
+  resources :groups, only: [:new, :create, :show, :edit, :update, :destroy]
+  root 'groups#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
