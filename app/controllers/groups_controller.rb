@@ -5,7 +5,13 @@ class GroupsController < ApplicationController
   end
 
   # GET /groups/1 or /groups/1.json
-  def show; end
+  def show
+    @group = Group.find(params[:id])
+    @fees = @group.group_fees.map(&:fee_id)
+    @fees = Fee.where(id: @fees).sort_by(&:created_at).reverse
+
+    @total = @fees.inject(0) { |sum, fee| sum + fee.amount }
+  end
 
   # GET /groups/new
   def new
