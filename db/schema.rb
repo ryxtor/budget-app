@@ -17,7 +17,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_27_191815) do
   create_table "fees", force: :cascade do |t|
     t.string "name"
     t.decimal "amount", default: "0.0", null: false
-    t.integer "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
@@ -25,16 +24,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_27_191815) do
   end
 
   create_table "group_fees", force: :cascade do |t|
-    t.integer "fee_id"
-    t.integer "group_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "group_id", null: false
+    t.bigint "fee_id", null: false
+    t.index ["fee_id"], name: "index_group_fees_on_fee_id"
+    t.index ["group_id"], name: "index_group_fees_on_group_id"
   end
 
   create_table "groups", force: :cascade do |t|
     t.string "name"
     t.string "icon"
-    t.integer "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
@@ -61,7 +61,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_27_191815) do
   end
 
   add_foreign_key "fees", "users"
-  add_foreign_key "group_fees", "fees", on_delete: :cascade
-  add_foreign_key "group_fees", "groups", on_delete: :cascade
+  add_foreign_key "group_fees", "fees"
+  add_foreign_key "group_fees", "groups"
   add_foreign_key "groups", "users"
 end

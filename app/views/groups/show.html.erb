@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg border-bottom border-dark shadow">
+  <div class="container-fluid">
+    <ul class="navbar-nav">
+        <li class="nav-item h1">
+        <%= link_to '<', '/', class: "nav-link ps-3 pe-3 text-white pt-0 pb-0" %>
+        </li>
+        </ul>
+    <a class="navbar-brand text-white font-proxima-bold" href="#"><%= @title.upcase || BudgetApp %></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon invert"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-white ps-3" href="/">Categories</a>
+        </li>
+        <li class="nav-item end">
+          <a class="nav-link text-white ps-3" href="/sign_out">Log out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<p class="font-weight-bold text-center font-proxima-bold mt-3 ">Total Spent: $ <%= @total || 0 %></p>
+
+<div class="container">
+  <% @fees.each do |fee| %>
+  <div class="container">
+    <div class="row border bg-white mb-3 fee-c shadow-sm">
+      <div class="col d-flex justify-content-center align-self-center p-0">
+        <p class="font-weight-bold m-0 p-0 font-proxima-light">
+          <%= fee.name %>
+        </p>
+      </div>
+      <div class="col border-left d-flex justify-content-center align-self-center">
+        <p class="font-weight-bold m-0 font-proxima-bold">
+          $ <%= fee.amount %>
+        </p>
+      </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="fixed-bottom">
+<%= button_to 'Add Transaction', new_group_fee_path(params[:id]), class: 'btn btn-add w-100 text-white font-proxima-bold', method: :get %>
+</div>

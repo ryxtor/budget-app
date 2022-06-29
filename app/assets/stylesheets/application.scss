@@ -1,2 +1,76 @@
 @import "bootstrap";
 @import "rails_bootstrap_forms";
+@import "font-awesome";
+@import "fonts.scss";
+
+$primary-color: #3778c2;
+$secondary-color: #5fb523;
+$text-color: #434b54;
+
+.navbar {
+  background-color: $primary-color !important;
+  color: $text-color;
+}
+
+.text {
+  color: $text-color !important;
+  text-decoration: none !important;
+}
+
+.alert {
+  margin: 0.5rem 1rem;
+  border-radius: 5px;
+  padding: 0.5rem;
+  color: white !important;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+}
+
+.success {
+  background-color: #28a745 !important;
+}
+
+.error {
+  background-color: #d92550 !important;
+}
+
+.font-proxima-light {
+  font-family: 'Proxima Nova Alt Lt', serif !important;
+  font-weight: 300 !important;
+  font-style: normal;
+}
+
+.font-proxima-bold {
+  font-family: 'Proxima Nova Rg', serif !important;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.font-kitten {
+  font-family: 'Kitten Swash', serif !important;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.primary-bg {
+  background-color: $primary-color !important;
+}
+
+.invert {
+  filter: invert(1);
+}
+
+.btn-add {
+  background-color: $secondary-color !important;
+  border-radius: 0 !important;
+}
+
+.margin-tb {
+  margin: 3rem 0;
+}
+
+.fee-c {
+  height: 4rem;
+}
