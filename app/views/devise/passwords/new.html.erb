@@ -1,4 +1,4 @@
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { "data-turbo": "false", method: :post }) do |f| %>
   <nav class="navbar navbar-expand-lg border-bottom border-dark shadow-sm mb-3">
     <div class="container-fluid">
       <ul class="navbar-nav">
