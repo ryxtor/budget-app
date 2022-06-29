@@ -12,7 +12,7 @@ $text-color: #434b54;
 }
 
 .text {
-  color: $text-color;
+  color: $text-color !important;
 }
 
 .alert {
@@ -32,4 +32,26 @@ $text-color: #434b54;
 
 .error {
   background-color: #d92550 !important;
+}
+
+.font-proxima-light {
+  font-family: 'Proxima Nova Alt Lt', serif !important;
+  font-weight: 300 !important;
+  font-style: normal;
+}
+
+.font-proxima-bold {
+  font-family: 'Proxima Nova Rg', serif !important;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.font-kitten {
+  font-family: 'Kitten Swash', serif !important;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.bg-primary {
+  background-color: $primary-color !important;
 }
