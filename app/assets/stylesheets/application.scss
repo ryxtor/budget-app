@@ -55,3 +55,7 @@ $text-color: #434b54;
 .bg-primary {
   background-color: $primary-color !important;
 }
+
+.invert {
+  filter: invert(1);
+}

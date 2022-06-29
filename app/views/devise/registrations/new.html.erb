@@ -1,27 +1,33 @@
-<div class="devise-bootstrap-form">
-  <div class="devise-bootstrap-form-row">
-    <div class="devise-bootstrap-form-col">
-      <h2 class="text-center">Sign up</h2>
-      <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<nav class="navbar navbar-expand-lg border-bottom border-dark shadow">
+  <div class="container-fluid">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+        <%= link_to '<', 'javascript:history.back()', class: "nav-link ps-3 pe-3 text-white" %>
+        </li>
+        </ul>
+    <a class="navbar-brand text-white" href="#">Register</a>
+
+          <%= f.submit "Next", class: "btn text-white" %>
+  </div>
+</nav>
+    <div class="d-flex flex-column">
         <%= render "devise/shared/error_messages", resource: resource %>
 
-        <%= f.text_field :name, autocomplete: "name" %>
+        <%= f.text_field :name, placeholder: "Full name" , autocomplete: "name", class: "w-100 border border-light p-2" %>
 
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <%= f.email_field :email, placeholder: "Email", autocomplete: "email", class: "w-100 border border-light p-2" %>
         <%= f.password_field :password,
               autocomplete: "new-password",
-              help: "(#{@minimum_password_length} characters minimum)" %>
+              help: "(#{@minimum_password_length} characters minimum)", placeholder: "Password", class: "w-100 border border-light p-2" %>
         <%= f.password_field :password_confirmation,
               autocomplete: "new-password",
-              label_class: "required" %>
+              label_class: "required", placeholder: "Password confirmation", class: "w-100 border border-light p-2" %>
 
-        <%= f.form_group do %>
-          <%= f.submit "Sign up", class: "btn btn-primary btn-block btn-lg" %>
-        <% end %>
-      <% end %>
-      <div class="text-center">
-        <%= render "devise/shared/links" %>
+        
+        
+      
       </div>
-    </div>
-  </div>
-</div>
+      <% end %>
+  
+

@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  load_and_authorize_resource
   # GET /groups or /groups.json
   def index
     @groups = current_user.groups

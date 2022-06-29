@@ -13,9 +13,7 @@
   </head>
 
   <body class="bg-light">
-    <% if user_signed_in? %>
-      <%= render 'shared/navbar' %>
-    <% end %>
+
     <% if notice != nil %>
     <div class="alert success">
       <%= notice %>
