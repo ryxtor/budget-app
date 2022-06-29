@@ -1,6 +1,7 @@
 @import "bootstrap";
 @import "rails_bootstrap_forms";
 @import "font-awesome";
+@import "fonts.scss";
 
 $primary-color: #3778c2;
 $secondary-color: #5fb523;
@@ -52,10 +53,23 @@ $text-color: #434b54;
   font-style: normal;
 }
 
-.bg-primary {
+.primary-bg {
   background-color: $primary-color !important;
 }
 
 .invert {
   filter: invert(1);
+}
+
+.btn-add {
+  background-color: $secondary-color !important;
+  border-radius: 0 !important;
+}
+
+.margin-tb {
+  margin: 3rem 0;
+}
+
+.fee-c {
+  height: 4rem;
 }

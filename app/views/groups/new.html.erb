@@ -1,16 +1,16 @@
 <%= form_with url: "/groups", scope: :group do |f| %>
-<nav class="navbar navbar-expand-lg border-bottom border-dark shadow">
+<nav class="navbar navbar-expand-lg border-bottom border-dark shadow-sm mb-3">
   <div class="container-fluid">
     <ul class="navbar-nav">
-        <li class="nav-item">
-        <%= link_to '<', 'javascript:history.back()', class: "nav-link ps-3 pe-3 text-white" %>
+        <li class="nav-item h1">
+        <%= link_to '<', '/', class: "nav-link ps-3 pe-3 text-white pt-0 pb-0" %>
         </li>
         </ul>
-    <a class="navbar-brand text-white" href="#"><%= @title || BudgetApp %></a>
-  <%= f.submit 'Create', class: "btn text-white" %>
+    <a class="navbar-brand text-white font-proxima-bold" href="#"><%= @title.upcase || BudgetApp %></a>
+  <%= f.submit 'Create', class: "btn text-white font-proxima-light" %>
   </div>
 </nav>
-  <%= f.text_field :name, placeholder: 'Category Name', class: "form-control" %>
-  <%= f.text_field :icon, placeholder: 'Icon Name', class: "form-control" %>
+  <%= f.text_field :name, placeholder: 'Category Name', class: "border border-light w-100 p-2 font-proxima-light" %>
+  <%= f.text_field :icon, placeholder: 'Icon Name', class: "border border-light w-100 p-2 font-proxima-light" %>
   <%= f.hidden_field :user_id, value: current_user.id %>
 <% end %>
