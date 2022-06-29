@@ -1,20 +1,17 @@
-<div class="devise-bootstrap-form">
-  <div class="devise-bootstrap-form-row">
-    <div class="devise-bootstrap-form-col">
-      <h2 class="text-center">Forgot your password?</h2>
-
-      <%= bootstrap_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-        <%= render "devise/shared/error_messages", resource: resource %>
-        <br>
-        <p class="text-left">Please enter your email address and we will send you a link to reset your password.</p>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-        <%= f.form_group do %>
-          <%= f.submit "Send me reset password instructions", class: 'btn btn-primary btn-block btn-lg' %>
-        <% end %>
-      <% end %>
-      <div class="text-center">
-        <%= render "devise/shared/links" %>
-      </div>
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <nav class="navbar navbar-expand-lg border-bottom border-dark shadow-sm mb-3">
+    <div class="container-fluid">
+      <ul class="navbar-nav">
+        <li class="nav-item h1">
+          <%= link_to '<', 'javascript:history.back()', class: "nav-link ps-3 pe-3 text-white pt-0 pb-0" %>
+        </li>
+      </ul>
+      <a class="navbar-brand text-white font-proxima-bold m-0" href="#">FORGOT PASSWORD</a>
+      <%= f.submit "Send", class: "btn text-white font-proxima-light" %>
     </div>
+  </nav>
+  <div class="d-flex flex-column">
+    <p class="text-center font-proxima-light">Please enter your email address and we will send you a link to reset your password.</p>
+    <%= f.email_field :email, placeholder: "Email", autocomplete: "email", class: "w-100 border border-light p-2 font-proxima-light" %>    
   </div>
-</div>
+<% end %>
