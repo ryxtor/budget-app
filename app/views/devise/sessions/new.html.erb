@@ -11,7 +11,7 @@
     </div>
   </nav>
   <div class="d-flex flex-column">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-100 border border-light p-2 font-proxima-light" %>
+    <%= f.email_field :email, autocomplete: "email", placeholder: 'Email', class: "w-100 border border-light p-2 font-proxima-light" %>
     <%= f.password_field :password, autocomplete: "current-password", placeholder: 'Password', class: "w-100 border border-light p-2 font-proxima-light" %>
     <% if devise_mapping.rememberable? -%>
       <div class="d-flex justify-content-center align-items-center m-2">
