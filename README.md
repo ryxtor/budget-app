@@ -36,6 +36,10 @@
   
   $ `rails s`
   
+## Live Demo
+
+[Heroku Live Demo](https://budget-app-ryxtor.herokuapp.com/)
+
 ## Author
 
 |    👤    | **Lucas Bonnefon**                                             |
