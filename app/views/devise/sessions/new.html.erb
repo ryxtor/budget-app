@@ -1,0 +1,28 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <nav class="navbar navbar-expand-lg border-bottom border-dark shadow-sm mb-3">
+    <div class="container-fluid">
+      <ul class="navbar-nav">
+        <li class="nav-item h1">
+          <%= link_to '<', 'javascript:history.back()', class: "nav-link ps-3 pe-3 text-white pt-0 pb-0" %>
+        </li>
+      </ul>
+      <a class="navbar-brand text-white font-proxima-bold me-0" href="#">LOGIN</a>
+      <%= f.submit "Log In", class: "btn text-white font-proxima-light" %>
+    </div>
+  </nav>
+  <div class="d-flex flex-column">
+    <%= f.email_field :email, autocomplete: "email", placeholder: 'Email', class: "w-100 border border-light p-2 font-proxima-light" %>
+    <%= f.password_field :password, autocomplete: "current-password", placeholder: 'Password', class: "w-100 border border-light p-2 font-proxima-light" %>
+    <% if devise_mapping.rememberable? -%>
+      <div class="d-flex justify-content-center align-items-center m-2">
+        <%= f.check_box :remember_me %>
+        <p class="m-0 ms-2 font-proxima-light"> Remember me </p>
+      </div>
+    <% end -%>
+    <div class="text-center">
+      <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+        <p><%= link_to "Forgot password?", new_password_path(resource_name), class: "font-proxima-light text" %></p>
+      <% end -%>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,19 @@
+<%= form_with url: group_fees_path, scope: :fee, method: :post do |f| %>
+<nav class="navbar navbar-expand-lg border-bottom border-dark shadow-sm mb-3">
+  <div class="container-fluid">
+    <ul class="navbar-nav">
+        <li class="nav-item h1">
+        <%= link_to '<', "/groups/#{params[:group_id]}", class: "nav-link ps-3 pe-3 text-white pt-0 pb-0" %>
+        </li>
+        </ul>
+    <a class="navbar-brand text-white font-proxima-bold" href="#"><%= @title.upcase || BudgetApp %></a>
+  <%= f.submit 'Add', class: "btn text-white font-proxima-light" %>
+  
+  </div>
+</nav>
+
+  <%= f.text_field :name, required: true, placeholder: 'Transaction Name', class: "border border-light w-100 p-2 font-proxima-light" %>
+  <%= f.number_field :amount, step: 0.01, placeholder: 'Amount', class: "border border-light w-100 p-2 font-proxima-light" %>
+  <%= f.select :group_id, options_for_select(current_user.groups.map { |g| [g.name, g.id] }, selected: @group.id), {}, class: "border border-light w-100 p-2 font-proxima-light" %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+<% end %>

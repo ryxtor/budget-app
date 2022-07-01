@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg border-bottom border-dark shadow-sm fixed-top">
+  <div class="container-fluid">
+    <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon invert"></span>
+    </button>
+    <a class="navbar-brand text-white font-proxima-bold" href="#"><%= @title.upcase || BudgetApp %></a>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+        
+        </li>
+        </ul>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-white ps-3" href="/">Categories</a>
+        </li>
+        <li class="nav-item end">
+          <a class="nav-link text-white ps-3" href="/sign_out">Log out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container bg-light pt-3 pb-3 margin-tb">
+<% @groups.each do |group|%>
+<div onclick="window.location='/groups/<%=group.id%>'" class="container bg-white border mb-3 row pb-2 pt-2 ms-0 ps-0 pe-0 shadow-sm capybara">
+<i class="fa <%= group.icon %> fa-4x col p-0 d-flex justify-content-center align-self-center" aria-hidden="true"></i>
+  
+<div class="col border-left">
+  <p class="text font-proxima-light"><%= group.name %></p>
+  <p class="font-weight-bold font-proxima-bold">$<%= group.total_amount || 0 %></p>
+  </div>
+  </div>
+<% end %>
+</div>
+
+<div class="fixed-bottom">
+<%= button_to 'Add Category', new_group_path, class: 'btn btn-add w-100 text-white font-proxima-bold', method: :get %>
+</div>
